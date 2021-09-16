@@ -323,6 +323,12 @@ namespace TR2RandomizerCore.Randomizers
                 DisguiseEntity(level, TR2Entities.MaskedGoon1, TR2Entities.BirdMonster);
             }
 
+            if (BigHeads)
+            {
+                // Find the heads, make them big!
+
+            }
+
             RandomizeEnemies(level, new EnemyRandomizationCollection
             {
                 Available = availableEnemyTypes,
@@ -648,6 +654,26 @@ namespace TR2RandomizerCore.Randomizers
                 levelEntities.AddRange(newEntities);
                 level.Data.Entities = levelEntities.ToArray();
                 level.Data.NumEntities = (uint)levelEntities.Count;
+            }
+
+            if (BigHeads)
+            {
+                // Find the heads, make them big!
+                foreach (var model in enemyEntities.Select(e => e.TypeID).Distinct().Select(t => level.Data.Models.First(m => m.ID == t)))
+                {
+                    if (model.NumMeshes >= 15)
+                    {
+                        // This works for about one enemy
+                        var i = model.StartingMesh + 9;
+                        var mesh = level.Data.Meshes.First(m => m.Pointer == level.Data.MeshPointers[i]);
+                        foreach (var vert in mesh.Vertices)
+                        {
+                            vert.X *= 3;
+                            vert.Z *= 3;
+                            vert.Y *= 3;
+                        }
+                    }
+                }
             }
         }
 
