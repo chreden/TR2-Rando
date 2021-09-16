@@ -22,6 +22,7 @@ namespace TR2RandomizerCore.Randomizers
         internal bool CrossLevelEnemies { get; set; }
         internal bool ProtectMonks { get; set; }
         internal bool DocileBirdMonsters { get; set; }
+        internal bool BigHeads { get; set; }
         internal int MaxPackingAttempts { get; set; }
         internal TexturePositionMonitorBroker TextureMonitor { get; set; }
         internal RandoDifficulty RandoEnemyDifficulty { get; set; }

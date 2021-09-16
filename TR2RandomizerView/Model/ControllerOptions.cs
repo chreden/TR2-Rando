@@ -23,7 +23,7 @@ namespace TR2RandomizerView.Model
 
         private BoolItemControlClass _isHardSecrets, _allowGlitched;
         private BoolItemControlClass _includeKeyItems;
-        private BoolItemControlClass _crossLevelEnemies, _protectMonks, _docileBirdMonsters;
+        private BoolItemControlClass _crossLevelEnemies, _protectMonks, _docileBirdMonsters, _bigHeads;
         private BoolItemControlClass _persistTextures, _retainKeySpriteTextures, _retainSecretSpriteTextures;
         private BoolItemControlClass _includeBlankTracks, _changeTriggerTracks;
         private BoolItemControlClass _persistOutfits, _removeRobeDagger;
@@ -741,6 +741,16 @@ namespace TR2RandomizerView.Model
             }
         }
 
+        public BoolItemControlClass BigHeads
+        {
+            get => _bigHeads;
+            set
+            {
+                _bigHeads = value;
+                FirePropertyChanged();
+            }
+        }
+
         public RandoDifficulty RandoEnemyDifficulty
         {
             get => _randoEnemyDifficulty;
@@ -943,6 +953,12 @@ namespace TR2RandomizerView.Model
                 Description = "Monks will not be given pickups and will not appear at the end of Diving Area."
             };
             BindingOperations.SetBinding(ProtectMonks, BoolItemControlClass.IsActiveProperty, randomizeEnemiesBinding);
+            BigHeads = new BoolItemControlClass()
+            {
+                Title = "Give enemies big heads",
+                Description = "Enemies will have big heads"
+            };
+            BindingOperations.SetBinding(BigHeads, BoolItemControlClass.IsActiveProperty, randomizeEnemiesBinding);
 
             // Textures
             Binding randomizeTexturesBinding = new Binding(nameof(RandomizeTextures)) { Source = this };
@@ -1051,7 +1067,7 @@ namespace TR2RandomizerView.Model
             };
             EnemyBoolItemControls = new List<BoolItemControlClass>()
             {
-                _crossLevelEnemies, _docileBirdMonsters, _protectMonks,
+                _crossLevelEnemies, _docileBirdMonsters, _protectMonks, _bigHeads
             };
             TextureBoolItemControls = new List<BoolItemControlClass>()
             {
@@ -1125,6 +1141,7 @@ namespace TR2RandomizerView.Model
             CrossLevelEnemies.Value = _controller.CrossLevelEnemies;
             ProtectMonks.Value = _controller.ProtectMonks;
             DocileBirdMonsters.Value = _controller.DocileBirdMonsters;
+            BigHeads.Value = _controller.BigHeads;
             RandoEnemyDifficulty = _controller.RandoEnemyDifficulty;
 
             RandomizeSecrets = _controller.RandomizeSecrets;
@@ -1365,6 +1382,7 @@ namespace TR2RandomizerView.Model
             _controller.CrossLevelEnemies = CrossLevelEnemies.Value;
             _controller.ProtectMonks = ProtectMonks.Value;
             _controller.DocileBirdMonsters = DocileBirdMonsters.Value;
+            _controller.BigHeads = BigHeads.Value;
             _controller.RandoEnemyDifficulty = RandoEnemyDifficulty;
 
             _controller.RandomizeSecrets = RandomizeSecrets;

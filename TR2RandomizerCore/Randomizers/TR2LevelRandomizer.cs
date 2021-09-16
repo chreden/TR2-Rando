@@ -43,6 +43,7 @@ namespace TR2RandomizerCore.Randomizers
         internal bool CrossLevelEnemies { get; set; }
         internal bool ProtectMonks { get; set; }
         internal bool DocileBirdMonsters { get; set; }
+        internal bool BigHeads { get; set; }
         internal RandoDifficulty RandoEnemyDifficulty { get; set; }
         internal bool GlitchedSecrets { get; set; }
         internal bool PersistOutfits { get; set; }
@@ -90,6 +91,7 @@ namespace TR2RandomizerCore.Randomizers
             CrossLevelEnemies = config.GetBool(nameof(CrossLevelEnemies), true);
             ProtectMonks = config.GetBool(nameof(ProtectMonks), true);
             DocileBirdMonsters = config.GetBool(nameof(DocileBirdMonsters));
+            BigHeads = config.GetBool(nameof(BigHeads));
             RandoEnemyDifficulty = (RandoDifficulty)config.GetEnum(nameof(RandoEnemyDifficulty), typeof(RandoDifficulty), RandoDifficulty.Default);
 
             RandomizeTextures = config.GetBool(nameof(RandomizeTextures));
@@ -154,6 +156,7 @@ namespace TR2RandomizerCore.Randomizers
             config[nameof(CrossLevelEnemies)] = CrossLevelEnemies;
             config[nameof(ProtectMonks)] = ProtectMonks;
             config[nameof(DocileBirdMonsters)] = DocileBirdMonsters;
+            config[nameof(BigHeads)] = BigHeads;
             config[nameof(RandoEnemyDifficulty)] = RandoEnemyDifficulty;
 
             config[nameof(RandomizeTextures)] = RandomizeTextures;
@@ -350,6 +353,7 @@ namespace TR2RandomizerCore.Randomizers
                         CrossLevelEnemies = CrossLevelEnemies,
                         ProtectMonks = ProtectMonks,
                         DocileBirdMonsters = DocileBirdMonsters,
+                        BigHeads = BigHeads,
                         TextureMonitor = textureMonitor,
                         RandoEnemyDifficulty = RandoEnemyDifficulty
                     }.Randomize(EnemySeed);
