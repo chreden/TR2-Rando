@@ -658,14 +658,18 @@ namespace TR2RandomizerCore.Randomizers
 
             if (BigHeads)
             {
+                // Load the attributes from the file.
+                var meshAttributes = JsonConvert.DeserializeObject<Dictionary<uint, Dictionary<string, string>>>(
+                    File.ReadAllText(@"Resources\mesh_attributes.json"));
+
                 // Find the heads, make them big!
                 foreach (var model in enemyEntities.Select(e => e.TypeID).Distinct().Select(t => level.Data.Models.First(m => m.ID == t)))
                 {
-                    if (model.NumMeshes >= 15)
+                    if (meshAttributes.TryGetValue(model.ID, out var attributes) &&
+                        attributes.TryGetValue("head", out var indexString))
                     {
-                        // This works for about one enemy
-                        var i = model.StartingMesh + 9;
-                        var mesh = level.Data.Meshes.First(m => m.Pointer == level.Data.MeshPointers[i]);
+                        var index = int.Parse(indexString);
+                        var mesh = level.Data.Meshes.First(m => m.Pointer == level.Data.MeshPointers[model.StartingMesh + index]);
                         foreach (var vert in mesh.Vertices)
                         {
                             vert.X *= 3;
