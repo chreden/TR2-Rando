@@ -1,8 +1,56 @@
 ﻿{
-    "32": {
+    "16": { // Masked Goon 1
+        "head": 3
+    },
+    "18": { // Masked Goon 3
+        "head": 3
+    },
+    "19": { // Knife thrower 1
+        "head": 10
+    },
+    "20": { // Shotgun goon
+        "head": 12
+    },
+    "21": { // Rat
+        "head": 2
+    },
+    "25": { // Shark
+    //     "head": 11
+    },
+    "29": { // Scuba Diver
+        "head": 20
+    },
+    "31": { // Rifle Goon
+        "head": 15
+    },
+    "32": { // Stick Goon 1
+        "head": 6
+    },
+    "34": { // Flamethrower
+        "head": 15
+    },
+    "45": { // Yeti
+        "head": 15
+    },
+    "46": { // Guardian
+        "head": 24
+    },
+    "48": { // Mercenary 1
         "head": 9
     },
-    "48": {
+    "49": { // Mercenary 2
         "head": 9
+    },
+    "52": { // Skidoo driver
+        "head": 17
+    },
+    "54": { // Monk 2
+        "head": 22
+    },
+    "256": { // Monk
+        "head": 2
+    },
+    "260": { // Winston
+        "head": 25
     }
 }
