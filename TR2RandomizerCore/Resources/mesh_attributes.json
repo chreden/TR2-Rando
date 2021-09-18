@@ -1,5 +1,11 @@
 ﻿{
+    "15": { // Dog
+        // "head": 20-23
+    },
     "16": { // Masked Goon 1
+        "head": 3
+    },
+    "17": { // Masked Goon 2
         "head": 3
     },
     "18": { // Masked Goon 3
@@ -15,10 +21,13 @@
         "head": 2
     },
     "25": { // Shark
-    //     "head": 11
+        //     "head": 11
     },
     "29": { // Scuba Diver
         "head": 20
+    },
+    "30": { // Shotgun goon
+        "head": 15
     },
     "31": { // Rifle Goon
         "head": 15
@@ -26,13 +35,29 @@
     "32": { // Stick Goon 1
         "head": 6
     },
+    "33": { // Stick Goon 2
+        "head": 6
+    },
     "34": { // Flamethrower
         "head": 15
+    },
+    "39": { // Tiger/Leopard
+        // "head": 22
+    },
+    "40": { // Bartoli
+        "head": 19
+    },
+    "41": { // Guard (Spear)
+        "head": 13
+        // Also ponytail is 14
     },
     "45": { // Yeti
         "head": 15
     },
     "46": { // Guardian
+        "head": 24
+    },
+    "47": { // Eagle
         "head": 24
     },
     "48": { // Mercenary 1
@@ -41,11 +66,20 @@
     "49": { // Mercenary 2
         "head": 9
     },
+    "50": { // Mercenary 3
+        "head": 9
+    },
     "52": { // Skidoo driver
         "head": 17
     },
+    "53": { // Monk 1
+        "head": 22
+    },
     "54": { // Monk 2
         "head": 22
+    },
+    "214": { // T-Rex
+        // 12, 13 (teeth?)
     },
     "256": { // Monk
         "head": 2
